@@ -1,2 +1,3 @@
 ((nil . ((cider-default-cljs-repl . shadow)
-         (cider-shadow-cljs-default-options . "app"))))
+         (cider-preferred-build-tool . shadow-cljs)
+         (cider-shadow-default-options . ":app"))))

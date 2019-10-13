@@ -4,6 +4,7 @@
                   :exclusions [com.google.javascript/closure-compiler-unshaded
                                org.clojure/google-closure-library]]
                  [org.clojure/core.async "0.4.500"]
+                 [clj-time "0.15.2"]
                  [thheller/shadow-cljs "2.8.62"]
                  [com.taoensso/sente "1.14.0-RC2"]
                  [http-kit "2.3.0"]

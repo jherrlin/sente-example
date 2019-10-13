@@ -3,13 +3,18 @@
                  [org.clojure/clojurescript "1.10.520"
                   :exclusions [com.google.javascript/closure-compiler-unshaded
                                org.clojure/google-closure-library]]
+                 [org.clojure/core.async "0.4.500"]
                  [thheller/shadow-cljs "2.8.62"]
+                 [com.taoensso/sente "1.14.0-RC2"]
+                 [http-kit "2.3.0"]
+                 [hiccup "1.0.5"]
                  [reagent "0.8.1"]
                  [re-frame "0.10.9"]
                  [re-com "2.6.0"]
                  [compojure "1.6.1"]
                  [yogthos/config "1.1.5"]
-                 [ring "1.7.1"]]
+                 [ring "1.7.1"]
+                 [ring/ring-defaults "0.3.2"]]
 
   :plugins []
 

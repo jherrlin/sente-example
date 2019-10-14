@@ -34,7 +34,8 @@
       (try
         (let [{:keys [chsk ch-recv send-fn state]}
               (sente/make-channel-socket! "/chsk" ; Note the same path as before
-                                          ?csrf-token)]
+                                          ?csrf-token
+                                          {:host "localhost:3000"})]
           (def chsk       chsk)
           (def ch-chsk    ch-recv) ; ChannelSocket's receive channel
           (def chsk-send! send-fn)

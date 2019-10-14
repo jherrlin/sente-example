@@ -85,4 +85,8 @@
                       ring.middleware.defaults/site-defaults)
                      ))
 
-(def handler routes)
+(def handler (-> routes
+                 ring.middleware.keyword-params/wrap-keyword-params
+                 ring.middleware.params/wrap-params
+                 (ring.middleware.defaults/wrap-defaults
+                  ring.middleware.defaults/site-defaults)))

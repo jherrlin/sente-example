@@ -9,6 +9,8 @@
   (let [parse-port (fn [port]
                      (try
                        (Integer/parseInt port)
-                       (catch Exception e port)))]
-    (hk/run-server handler {:port (or (parse-port (:port env))
-                                      (parse-port "3000"))})))
+                       (catch Exception e port)))
+        port (or (parse-port (:port env))
+                 (parse-port "3000"))]
+    (println "Server starting on port: " port)
+    (hk/run-server handler {:port port})))

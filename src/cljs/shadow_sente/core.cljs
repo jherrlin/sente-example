@@ -12,7 +12,20 @@
    ))
 
 
-(comment
+(defn dev-setup []
+  (when config/debug?
+    (println "dev mode")))
+
+(defn ^:dev/after-load mount-root []
+  (re-frame/clear-subscription-cache!)
+  (reagent/render [views/main-panel]
+                  (.getElementById js/document "app")))
+
+(defn init []
+  (re-frame/dispatch-sync [::events/initialize-db])
+  (dev-setup)
+  (mount-root)
+
 
   (let [?csrf-token (when-let [el (.getElementById js/document "app")]
                       (.getAttribute el "data-csrf-token"))]
@@ -48,18 +61,3 @@
           (js/console.log e)))))
 
   )
-
-
-(defn dev-setup []
-  (when config/debug?
-    (println "dev mode")))
-
-(defn ^:dev/after-load mount-root []
-  (re-frame/clear-subscription-cache!)
-  (reagent/render [views/main-panel]
-                  (.getElementById js/document "app")))
-
-(defn init []
-  (re-frame/dispatch-sync [::events/initialize-db])
-  (dev-setup)
-  (mount-root))

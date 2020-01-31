@@ -14,3 +14,7 @@
                  (parse-port "3000"))]
     (println "Server starting on port: " port)
     (hk/run-server handler {:port port})))
+
+(comment
+  (-main)  ;; eval this
+  )

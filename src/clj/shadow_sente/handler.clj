@@ -77,13 +77,6 @@
   (POST "/chsk" req (ring-ajax-post req))
   (resources "/"))
 
-(def dev-handler (-> #'routes
-                     wrap-reload
-                     ring.middleware.keyword-params/wrap-keyword-params
-                     ring.middleware.params/wrap-params
-                     (ring.middleware.defaults/wrap-defaults
-                      ring.middleware.defaults/site-defaults)
-                     ))
 
 (def handler (-> routes
                  ring.middleware.keyword-params/wrap-keyword-params
